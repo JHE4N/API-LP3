@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15"
+  },
+  "name": "api-pl3",
+  "description": "Trabalho de criar uma api de LP3",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JHE4N/API-PL3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JHE4N/API-PL3/issues"
+  },
+  "homepage": "https://github.com/JHE4N/API-PL3#readme"
+}

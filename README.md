@@ -1,2 +1,2 @@
-# API-LP3
- API para o trabalho de LP3
+# API-PL3
+ Trabalho de criar uma api de LP3
