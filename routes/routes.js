@@ -12,11 +12,27 @@ exports.listarFilmes = function (req, res) {
 };
 exports.adicionarFilmes = function (req, res) {
     const novoFilme = req.query;
-    if(!novoFilme.nome || !novoFilme.informacoes || !novoFilme.download)
+    if(!novoFilme.nome || !novoFilme.informacoes || !novoFilme.download){
         return res.send({mensagem:'[ERRO]: Dados insuficientes para cadastrar o filme!'});
-    Filmes.create(novoFilme, function (erro, filme) {
+    } else{
+        Filmes.create(novoFilme, function (erro, filmee) {
         if (erro)
             return res.send({mensagem:'[ERRO]: Não foi possível cadastrar o filme!'});
         return res.send({mensagem:'[SUCESSO]: Filme cadastrado com sucesso!'});
-    });
-}
+        });
+    };
+    res.send({mensagem:'[SUCESSO]: Filme cadastrado com sucesso!'});
+};
+exports.deletarFilmes = function (req, res) {
+    const filme = req.query:;
+    if (!filme.nome){
+        return res.send({mensagem:'[ERRO]: Informar o nome do filmes para deletar!'});
+    } else{
+        Filmes.findOneAndDelete({nome: filme.nome}, function (erro, filme) {
+            if (erro){
+                return res.send({mensagem:'[ERRO]: Na remoção do filme!'});
+            } else if(dados != null){
+                return res.send({mensagem:'[SUCESSO]: Filme removido com sucesso!'});
+        });
+    }
+};
