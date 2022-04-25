@@ -10,7 +10,6 @@ const enderecoBanco = process.env.URL_BD; //Puxando a url do .env
 
 api.listen(porta, function () {
     console.log('API rodando na porta: ' + porta);
-    console.log('Endereço do banco: ' + enderecoBanco);
 });
 
 mongoose.connect(enderecoBanco);

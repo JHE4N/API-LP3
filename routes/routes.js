@@ -34,6 +34,8 @@ exports.removerFilmes = function (req, res) {
                 return res.send({mensagem:`[ERRO]: Na remoção do filme ${filme.nome}!`});
             } else if(filme != null){
                 return res.send({mensagem:'[SUCESSO]: Filme removido com sucesso!'});
+            } else if (filme == null){
+                return res.send({mensagem:'[ERRO]: Filme não encontrado!'});
             }
             return res.send({mensagem:'[SUCESSO]: Filme removido com sucesso!'});
         });
