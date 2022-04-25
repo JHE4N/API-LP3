@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express'); // importando o express
 const api = express(); // cria um servidor
 const mongoose = require('mongoose'); //Puxando o mongoose 
-const { listarFilmes, adicionarFilmes } = require('./routes/routes');
+const { listarFilmes, adicionarFilmes, removerFilmes } = require('./routes/routes');
 const porta = process.env.PORTA_API; //Puxando a porta do .env
 const enderecoBanco = process.env.URL_BD; //Puxando a url do .env
 
@@ -24,6 +24,6 @@ mongoose.connection.on('connected', function () {
 // PUT -> enviar informação (editar)
 // DELETE -> deletar informação
 
-//api.get('Produtos', produtosController.listarProdutos);
 api.get('/filmes', listarFilmes);
 api.post('/filmes:add', adicionarFilmes);
+api.delete('/filmes:del', removerFilmes);
